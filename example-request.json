@@ -1,0 +1,130 @@
+{
+  "input": {
+    "workflow": {
+      "3": {
+        "inputs": {
+          "seed": 1028272469609067,
+          "steps": 4,
+          "cfg": 1,
+          "sampler_name": "euler",
+          "scheduler": "beta",
+          "denoise": 1,
+          "model": [
+            "4",
+            0
+          ],
+          "positive": [
+            "17",
+            0
+          ],
+          "negative": [
+            "18",
+            0
+          ],
+          "latent_image": [
+            "5",
+            0
+          ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+          "title": "KSampler"
+        }
+      },
+      "4": {
+        "inputs": {
+          "ckpt_name": "Qwen-Rapid-AIO-NSFW-v11.4.safetensors"
+        },
+        "class_type": "CheckpointLoaderSimple",
+        "_meta": {
+          "title": "CheckpointLoaderSimple"
+        }
+      },
+      "5": {
+        "inputs": {
+          "value": 1080
+        },
+        "class_type": "EmptyLatentImage",
+        "_meta": {
+          "title": "EmptyLatentImage"
+        }
+      },
+      "8": {
+        "inputs": {
+          "samples": [
+            "3",
+            0
+          ],
+          "vae": [
+            "4",
+            2
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "17": {
+        "inputs": {
+          "text": "人物脱光衣服，裸体，保持原来的姿势",
+          "clip": [
+            "4",
+            1
+          ],
+          "vae": [
+            "4",
+            2
+          ],
+          "image1": [
+            "21",
+            0
+          ]
+        },
+        "class_type": "TextEncodeQwenImageEditPlus",
+        "_meta": {
+          "title": "TextEncodeQwenImageEditPlus"
+        }
+      },
+      "18": {
+        "inputs": {
+          "text": "",
+          "clip": [
+            "4",
+            1
+          ],
+          "vae": [
+            "4",
+            2
+          ]
+        },
+        "class_type": "TextEncodeQwenImageEditPlus",
+        "_meta": {
+          "title": "TextEncodeQwenImageEditPlus"
+        }
+      },
+      "21": {
+        "inputs": {
+          "text": "base64test"
+        },
+        "class_type": "easy loadImageBase64",
+        "_meta": {
+          "title": "easy loadImageBase64"
+        }
+      },
+      "22": {
+        "inputs": {
+          "filename_prefix": "ComfyUI",
+          "images": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      }
+    }
+  }
+}
