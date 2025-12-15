@@ -4,7 +4,6 @@ FROM runpod/worker-comfyui:5.5.0-base
 # install custom nodes into comfyui
 RUN comfy node install --exit-on-fail \
     comfyui-easy-use@1.3.4 \
-    ComfyUI-VideoHelperSuite@1.7.8 \
     ComfyUI-WanVideoWrapper@1.4.2
 
 # install VideoHelperSuite（git clone）
