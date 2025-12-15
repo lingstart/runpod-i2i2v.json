@@ -139,7 +139,7 @@
       "start_index": 0,
       "end_index": -1,
       "start_image": [
-        "62",
+        "56",
         0
       ]
     },
@@ -179,7 +179,111 @@
       "title": "Number of Frames"
     }
   },
-  "62": {
+  "51": {
+    "inputs": {
+      "width": 1080,
+      "height": 1440,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "空Latent图像"
+    }
+  },
+  "52": {
+    "inputs": {
+      "prompt": "人物脱光衣服，裸体，保持原来的姿势",
+      "clip": [
+        "55",
+        1
+      ],
+      "vae": [
+        "55",
+        2
+      ],
+      "image1": [
+        "63",
+        0
+      ]
+    },
+    "class_type": "TextEncodeQwenImageEditPlus",
+    "_meta": {
+      "title": "TextEncodeQwenImageEditPlus"
+    }
+  },
+  "53": {
+    "inputs": {
+      "prompt": "",
+      "clip": [
+        "55",
+        1
+      ],
+      "vae": [
+        "55",
+        2
+      ]
+    },
+    "class_type": "TextEncodeQwenImageEditPlus",
+    "_meta": {
+      "title": "TextEncodeQwenImageEditPlus"
+    }
+  },
+  "54": {
+    "inputs": {
+      "seed": 479515707183368,
+      "steps": 4,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "beta",
+      "denoise": 1,
+      "model": [
+        "55",
+        0
+      ],
+      "positive": [
+        "52",
+        0
+      ],
+      "negative": [
+        "53",
+        0
+      ],
+      "latent_image": [
+        "51",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "K采样器"
+    }
+  },
+  "55": {
+    "inputs": {
+      "ckpt_name": "Qwen-Rapid-AIO-NSFW-v11.4.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Checkpoint加载器（简易）"
+    }
+  },
+  "56": {
+    "inputs": {
+      "samples": [
+        "54",
+        0
+      ],
+      "vae": [
+        "55",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "63": {
     "inputs": {
       "base64_data": "base64test",
       "image_output": "Hide",
@@ -188,6 +292,19 @@
     "class_type": "easy loadImageBase64",
     "_meta": {
       "title": "Load Image (Base64)"
+    }
+  },
+  "65": {
+    "inputs": {
+      "filename_prefix": "VideoFiles",
+      "filenames": [
+        "39",
+        0
+      ]
+    },
+    "class_type": "SaveVideoFilesS3",
+    "_meta": {
+      "title": "Save Video Files to S3"
     }
   }
 }
