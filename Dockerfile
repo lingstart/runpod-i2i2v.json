@@ -7,6 +7,12 @@ RUN comfy node install --exit-on-fail \
     ComfyUI-VideoHelperSuite@1.7.8 \
     ComfyUI-WanVideoWrapper@1.4.2
 
+# install VideoHelperSuite（git clone）
+RUN cd /comfyui/custom_nodes && \
+    git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git && \
+    cd ComfyUI-VideoHelperSuite && \
+    git checkout v1.7.8
+
 # download models into comfyui
 RUN comfy model download \
     --url "https://huggingface.co/Phr00t/Qwen-Image-Edit-Rapid-AIO/resolve/main/v11/Qwen-Rapid-AIO-NSFW-v11.4.safetensors?download=true" \
