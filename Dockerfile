@@ -9,9 +9,7 @@ RUN comfy node install --exit-on-fail \
 
 # install VideoHelperSuite（git clone）
 RUN cd /comfyui/custom_nodes && \
-    git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git && \
-    cd ComfyUI-VideoHelperSuite && \
-    git checkout v1.7.8
+    git clone https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite.git
 
 # download models into comfyui
 RUN comfy model download \
